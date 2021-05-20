@@ -17,6 +17,15 @@ func (p person) print() {
 	fmt.Printf("%+v", p)
 }
 
+// func (p *person) updateName(name string) {
+// 	p.firsName = name
+// }
+
+func (p *person) updateName(name string) {
+	// (*p).firsName = name
+	(p).firsName = name
+}
+
 func main() {
 
 	joe := person{
@@ -27,18 +36,10 @@ func main() {
 			zip:   50200,
 		},
 	}
-	joe.print()
 
-	// joe = person{
-	// 	"Watchapon",
-	// 	"Jun-o-pat",
-	// 	"contact": {
-	// 		"watchapon@igg.com",
-	// 		50200,
-	// 	},
-	// }
-
-	// joe.firsName = "Watchapon"
-	// joe.lastName = "Jun-o-pat"
-
+	// joePointer := &joe
+	fmt.Println(*&*&joe)
+	// joePointer.updateName("INW JOE")
+	// joe.updateName("INW JOE")
+	// joe.print()
 }
